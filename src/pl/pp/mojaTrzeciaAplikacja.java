@@ -36,7 +36,50 @@ public class mojaTrzeciaAplikacja {
         } else {
             System.out.println("x jest równe y");
         }
+        //zakończenie programu za pomocą wpisania odpowiedniego klawisza
+        while(true){
+            System.out.println("Wpisz wartość -1 żeby wyjść z programu");
+            var input = scanner.nextDouble();
+            if(input == -1){
+                System.out.println("Wyjście...");
+                break;
+                }
+        }
+        scanner.close();
          */
-        
+        Scanner scanner = new Scanner(System.in);
+
+        int liczbadni = 0;
+        while (liczbadni >= 0){
+
+            System.out.println("Podaj proszę liczbę dni:");
+            liczbadni = scanner.nextInt();
+            if(liczbadni >=0) {
+
+                int tygodnie = liczbadni / 7;
+                int reszta = liczbadni % 7;
+                System.out.println(liczbadni + " dni to " + tygodnie + " tygodnie " + reszta + " i dni");
+            }
+            else {
+                System.out.println("Podałeś ujemną liczbę dni");
+                break;
+            }
+        }
+        double fahrenheit = 0;
+        while (fahrenheit != -1){
+            System.out.println("Podaj stopnie Fahrenheit’a");
+            fahrenheit = scanner.nextDouble();
+            if(fahrenheit >= 0) {
+                double celcjusz = (fahrenheit - 32.0) / 1.8;
+                double kelvin = celcjusz + 273.16;
+                System.out.println("Fahrenheity: " + fahrenheit);
+                System.out.println("Celcjusze: " + celcjusz);
+                System.out.println("Kalviny: " + kelvin);
+            }
+            else {
+                break;
+            }
+        }
+        scanner.close();
     }
 }
