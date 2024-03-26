@@ -86,10 +86,10 @@ public class mojaPiataAplikacja {
         int columns = scanner.nextInt();
         int rows = scanner.nextInt();
 
-        wyswietlZnak(UserChar, columns, rows);
+        ShowChar(UserChar, columns, rows);
         scanner.close();
     }
-    public static void wyswietlZnak(char UserChar, int columns, int rows) {
+    public static void ShowChar(char UserChar, int columns, int rows) {
         for (int i = 0; i < rows; i++) {
             //System.out.print("Line " + (i + 1 ) + ". ");
             for (int j = 0; j < columns; j++) {
