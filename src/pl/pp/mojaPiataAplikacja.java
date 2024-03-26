@@ -1,8 +1,10 @@
 package pl.pp;
 
+import java.util.Scanner;
+
 public class mojaPiataAplikacja {
     public static void main(String[] args) {
-
+        /*
         // Obliczenia i wyświetlenie wyniku dla wartości przypisanych w kodzie aplikacji
         System.out.println("Obliczenia i wyświetlenie wyniku dla wartości przypisanych w kodzie aplikacji");
         boolean gameOver = true;
@@ -77,5 +79,23 @@ public class mojaPiataAplikacja {
             finalScore += 1000;
         }
         return finalScore;
+         */
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter char, rows and columns: ");
+        char UserChar = scanner.next().charAt(0);
+        int columns = scanner.nextInt();
+        int rows = scanner.nextInt();
+
+        wyswietlZnak(UserChar, columns, rows);
+        scanner.close();
+    }
+    public static void wyswietlZnak(char UserChar, int columns, int rows) {
+        for (int i = 0; i < rows; i++) {
+            //System.out.print("Line " + (i + 1 ) + ". ");
+            for (int j = 0; j < columns; j++) {
+                System.out.print(UserChar);
+            }
+            System.out.println();
+        }
     }
 }
