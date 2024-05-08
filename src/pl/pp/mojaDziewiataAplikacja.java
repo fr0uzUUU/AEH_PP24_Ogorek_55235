@@ -1,6 +1,7 @@
 package pl.pp;
+import pl.pp.Person;
 
-public class mojaOsmaAplikacja {
+public class mojaDziewiataAplikacja {
     public static void main(String[] args) {
         /*Person person1 = new Person("Test", "Testowy", 25); //nowy obiekt klasy Person
         person1.hiToAll(); //wywołanie metody hiToAll() z obiektu person1 klasy Person
@@ -19,13 +20,15 @@ public class mojaOsmaAplikacja {
         circle1.getInfo(); //wywołanie metody getInfo() z obiektu circle1 klasy Circle
         circle1.setRadius(2.6); //wywołanie metody tzw. "settera" do zmiany promienia
         circle1.getInfo();*/
-        Konto konto1 = new Konto(1, 1000, "Jarek Ogarek", "example@email.com", 900800700);
-
-        konto1.Zasil(550);
-
-        konto1.Wyciagnij(2000);
-
-        konto1.Wyciagnij(700);
-
+        Magazyn mag1 = new Magazyn(1, 5000,0,"Adam","adam@example.com", 102840284);
+        mag1.dodajTowar(400);
+        mag1.dodajTowar(4000);
+        mag1.dodajTowar(4000);
+        mag1.sprawdzZajetosc();
+        mag1.usunTowar(400);
+        mag1.sprawdzZajetosc();
+        mag1.usunTowar(5000);
+        mag1.sprawdzZajetosc();
+        mag1.aktualizujKontakt("robert@gamil.com", 600390092);
     }
 }
