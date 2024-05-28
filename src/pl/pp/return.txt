@@ -1,0 +1,2 @@
+Plik: /Users/michalogorek/Documents/GitHub/AEH_PP24_Ogorek_55235/src/pl/pp/sample_text.txt
+Liczba linii: 15
