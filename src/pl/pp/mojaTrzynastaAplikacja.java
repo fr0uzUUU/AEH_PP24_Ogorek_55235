@@ -2,7 +2,7 @@ package pl.pp;
 import java.io.*;
 import java.util.Scanner;
 
-public class mojaDwunastaAplikacja {
+public class mojaTrzynastaAplikacja {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean done = false;
@@ -14,12 +14,12 @@ public class mojaDwunastaAplikacja {
                 System.out.print("Podaj ścieżkę do pliku wyjściowego: ");
                 String outputFile = scanner.nextLine();
 
-                // Wczytywanie pliku i liczenie linii
-                int lineCount = countLines(inputFile);
-                System.out.println("Liczba linii w pliku: " + lineCount);
+                // Wczytywanie pliku i liczenie słów
+                int wordsCount = countWords(inputFile);
+                System.out.println("Liczba słów w pliku: " + wordsCount);
 
                 // Zapisywanie wyniku do pliku wyjściowego
-                writeOutput(outputFile, inputFile, lineCount);
+                writeOutput(outputFile, inputFile, wordsCount);
 
                 done = true;  // Zakończ pętlę, jeśli wszystko poszło dobrze
             } catch (FileNotFoundException e) {
@@ -29,19 +29,24 @@ public class mojaDwunastaAplikacja {
             }
         }
     }
-
-    public static int countLines(String filePath) throws IOException {
+    public  static  int countWords(String filePath) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
-        int lines = 0;
-        while (reader.readLine() != null) lines++;
-        reader.close();
-        return lines;
+        String line;
+        int wordsCount = 0;
+        line = line.toLowerCase();
+        while((line = reader.readLine()) != null) {
+            //Splits each line into words
+            String words[] = line.split("");
+            //Counts each word
+            wordsCount = wordsCount + words.length;
+        }
+        return wordsCount;
     }
 
-    public static void writeOutput(String outputFile, String inputFile, int lineCount) throws IOException {
-        PrintWriter writer = new PrintWriter(outputFile);
+    public static void writeOutput(String outputFile, String inputFile, int wordsCount) throws IOException {
+       PrintWriter writer = new PrintWriter(outputFile);
         writer.println("Plik: " + inputFile);
-        writer.println("Liczba linii: " + lineCount);
+        writer.println("Liczba słów: " + wordsCount);
         writer.close();
     }
 
